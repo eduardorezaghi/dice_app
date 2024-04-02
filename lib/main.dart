@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart'
+import 'package:flutter/material.dart';
 
 void main() {
   runApp(MyApp());
@@ -23,10 +23,25 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter Demo'),
+        title: const Text('Flutter Demo'),
       ),
-      body: Center(
-        child: Text('Hello World'),
+      body: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            begin: Alignment.topLeft,
+            end: Alignment.bottomRight,
+            colors: [Colors.blue, Colors.green],
+          ),
+        ),
+        child: const Center(
+          child: Card(
+            color: Colors.white,
+            child: Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text('Hello World!'),
+            ),
+          ),
+        ),
       ),
     );
   }
