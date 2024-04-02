@@ -1,3 +1,4 @@
+import 'package:dice_app/gradient_container.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -19,30 +20,18 @@ class MyApp extends StatelessWidget {
 
 
 class MyHomePage extends StatelessWidget {
+  const MyHomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Flutter Demo'),
       ),
-      body: Container(
-        decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [Colors.blue, Colors.green],
-          ),
-        ),
-        child: const Center(
-          child: Card(
-            color: Colors.white,
-            child: Padding(
-              padding: EdgeInsets.all(8.0),
-              child: Text('Hello World!'),
-            ),
-          ),
-        ),
-      ),
+      body: const GradientContainer([
+        Colors.blue,
+        Colors.green,
+      ]),
     );
   }
 }
